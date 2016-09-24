@@ -6,7 +6,26 @@ var app = express();
 app.use(morgan('combined'));
 
 
-
+var content = {
+    title: 'Article One by Ram',
+    heading: 'Article One',
+    date: '23 Sep, 2016',
+    content: `               
+                <p>
+                    This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.
+                      This is the content of my Article One.   This is the content of my Article One.                 
+                </p>
+                
+                <p>
+                    This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.
+                      This is the content of my Article One.   This is the content of my Article One.                 
+                </p>
+                
+                <p>
+                    This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.
+                      This is the content of my Article One.   This is the content of my Article One.                 
+                </p>`
+            };
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
