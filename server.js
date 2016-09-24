@@ -5,8 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-
-var articleOne = {
+var articles = {
+    'article-one':  {
     title: 'Article One by Ram',
     heading: 'Article One',
     date: '23 Sep, 2016',
@@ -23,9 +23,26 @@ var articleOne = {
                 This is the content of my Article One. This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.
             </p>`             
                 
-            };
+            },
+    'article-two': {    
+        title: 'Article Two by Ram',
+        heading: 'Article Two',
+        date: '23 Sep, 2016',
+        content: `                
+            <p>
+                This is the content of my Article Two.
+            </p>`
+            },
+    'article-three': {    
+        title: 'Article Three by Ram',
+        heading: 'Article Three',
+        date: '23 Sep, 2016',
+        content: `                
+            <p>
+                This is the content of my Article One. This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.
+             </P>`  },
             
-            
+};            
 function createTemplate (data) {
     var title = data.title;
     var heading = data.heading;
@@ -78,7 +95,10 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
+app.get('/:articleName', function (req, res) {
+    //articleName == article-one
+    //articles[articleName] == {} content for article one
+    var articleName = req.params.articleName;
      res.send(createTemplate(articleOne));
 });
 
