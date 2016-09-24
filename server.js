@@ -6,26 +6,65 @@ var app = express();
 app.use(morgan('combined'));
 
 
-var content = {
+var articleOne = {
     title: 'Article One by Ram',
     heading: 'Article One',
     date: '23 Sep, 2016',
-    content: `               
-                <p>
-                    This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.
-                      This is the content of my Article One.   This is the content of my Article One.                 
-                </p>
+    content: `                
+            <p>
+                This is the content of my Article One. This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.
+            </p>
                 
-                <p>
-                    This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.
-                      This is the content of my Article One.   This is the content of my Article One.                 
-                </p>
+            <p>
+                This is the content of my Article One. This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.
+            </p>
                 
-                <p>
-                    This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.
-                      This is the content of my Article One.   This is the content of my Article One.                 
-                </p>`
+            <p>
+                This is the content of my Article One. This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.
+            </p>`             
+                
             };
+            
+            
+var htmlTemplate = `            
+   <html>
+    <head>
+        <title>
+            ${title}
+        </title>
+        <meta name='viewport' content='width=device-width, initial-scale = 1'/>
+        
+        <link href="/ui/style.css" rel="stylesheet" />  
+            
+    </head>
+    
+    <body>
+        <div class='container'>
+          <div>
+                <a href='/'>Home</a>
+            </div>
+            <hr/>
+            
+            <div>
+                <h3>
+                    ${heading}
+                </h3>
+            </div>
+            
+            <div>
+                ${date}
+            </div>
+            
+            <div>
+                $[content} 
+            </div>  
+        </div>
+            
+    </body>
+</html>
+         
+            
+`;            
             
             
 app.get('/', function (req, res) {
