@@ -62,7 +62,7 @@ function createTemplate (data) {
                 </div>
                 
                 <div>
-                    $[content} 
+                    ${content} 
                 </div>  
             </div>
                 
