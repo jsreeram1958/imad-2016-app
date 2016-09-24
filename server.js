@@ -39,7 +39,7 @@ var articles = {
         date: '24 Sep, 2016',
         content: `                
             <p>
-                This is the content of my Article One. This is the content of my Article One. This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.This is the content of my Article One. This is the content of my Article One.
+                This is the content of my Article Three. This is the content of my Article Three. This is the content of my Article Three. This is the content of my Article Three.This is the content of my Article Three. This is the content of my Article Three.This is the content of my Article Three. This is the content of my Article Three.
              </P>`  },
             
 };            
