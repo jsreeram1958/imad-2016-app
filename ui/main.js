@@ -35,7 +35,6 @@ button.onclick = function () {
              span.innerHTML = counter.toString(); 
         }
         }
-
 };
 
     //Make a request
