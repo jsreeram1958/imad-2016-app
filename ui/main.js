@@ -23,12 +23,23 @@ var counter = 0;
 
 button.onclick = function () {
     
-    
-    
-    
-    //render the variable in the correct span
-    counter = counter + 1;
-    var span = document.getElementById('count');
-    span.innerHTML = counter.toString();
-    
+   //Create a request object
+   var request = new XMLhttprequest();
+   
+   //Capture the request and store in a variable
+   request.onreadystatechange = function () {
+      if (request.readystate == XMLhttprequest.DONE) {
+        if (request.status == 200) {
+             var counter = request.responseText;
+             var span = document.getElementById('count');
+             span.innerHTML = counter.toString(); 
+        }
+        }
+
+};
+
+    //Make a request
+    request.open ('GET', 'http://jsreeram1958.imad.hasura-app.io/counter', true);
+    request.send(null);
+
 };
