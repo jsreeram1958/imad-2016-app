@@ -43,7 +43,7 @@ button.onclick = function () {
 
 };
 
-var nameinput = getElementByID('name');
+var nameinput = getElementById('name');
 var name = nameinput.value;
 var submit = getElementById('submit_btn');
 
