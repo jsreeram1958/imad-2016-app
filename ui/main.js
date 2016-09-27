@@ -19,7 +19,7 @@ console.log('Loaded!');
 // Counter code
 
 var button = document.getElementById('counter');
-var counter = 10;
+//var counter = 10;
 
 button.onclick = function () {
     
